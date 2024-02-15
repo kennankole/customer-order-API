@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from customerApp.models import Customer
+from customerApp.models import Customer, Order
 
 class CustomerSerializer(serializers.ModelSerializer):
   class Meta:
@@ -9,3 +9,12 @@ class CustomerSerializer(serializers.ModelSerializer):
     
     def create(self, validated_data):
       return Customer.objects.create(**validated_data)
+    
+    
+class OrderSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Order
+    fields = ['id', 'item', 'amount']
+    
+  def create(self, validated_data):
+    return Order.objects.create(**validated_data)

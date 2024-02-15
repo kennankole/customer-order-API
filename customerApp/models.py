@@ -7,3 +7,12 @@ class Customer(AbstractUser):
 
   class Meta:
     ordering = ['username']
+    
+
+class Order(models.Model):
+  item = models.CharField(max_length=250)
+  amount = models.IntegerField()
+  customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+  
+  class Meta:
+    ordering = ['item', 'customer', 'amount']
