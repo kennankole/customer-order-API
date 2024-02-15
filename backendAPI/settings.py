@@ -75,14 +75,14 @@ REST_FRAMEWORK = {
 
 WSGI_APPLICATION = 'backendAPI.wsgi.application'
 
-
+AUTH_USER_MODEL = 'customerApp.Customer'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql',
-		'NAME': 'customer_app_db',
+		'NAME': 'services_db',
 		'PASSWORD': '2300',
 		'USER': 'postgres',
 		'HOST': 'localhost',
