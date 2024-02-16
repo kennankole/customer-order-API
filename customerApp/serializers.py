@@ -14,7 +14,7 @@ class CustomerSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
   class Meta:
     model = Order
-    fields = ['id', 'item', 'amount']
+    fields = ['id', 'item', 'amount', 'customer']
     
   def create(self, validated_data):
     return Order.objects.create(**validated_data)

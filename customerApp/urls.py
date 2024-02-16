@@ -4,7 +4,8 @@ from customerApp import views
 
 urlpatterns = [
   path('customers/', views.customers_list),
-  path('orders/', views.order_list)
+  path('customers/<int:pk>/', views.customer_detail, name='customers'),
+  path('orders/', views.order_list),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
