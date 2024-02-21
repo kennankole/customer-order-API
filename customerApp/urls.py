@@ -1,12 +1,16 @@
-from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from customerApp import views
 
+router = DefaultRouter()
+
+router.register(r'customers', views.CustomerViewSet, basename="customers"),
+router.register(r'orders', views.OrderViewSet, basename="orders"),
+# router.register(r'api-customer-login', views.CustomerLogIn.as_view()),
 urlpatterns = [
-  path('orders/', views.OrderList.as_view(), name="orders"),
-  path('orders/<int:pk>/', views.OrderDetail.as_view(), name="orders"),
-  path('customers/', views.CustomerList.as_view(), name="customers"),
-  path('customers/<int:pk>/', views.CustomerDetail.as_view(), name="customers")
+  # 
+  path('', include(router.urls)),
+  path('api-customer-login/', views.CustomerLogIn.as_view(), name="customer_login")
 ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
+# urlpatterns = format_suffix_patterns(urlpatterns)

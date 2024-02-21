@@ -24,4 +24,5 @@ urlpatterns = [
 
 urlpatterns += [
     path('api-auth/', include('rest_framework.urls')),
+    path('openid/', include('oidc_provider.urls', namespace='oidc_provider')),
 ]
