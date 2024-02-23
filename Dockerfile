@@ -1,5 +1,10 @@
 FROM python:3.9
 
+ENV HOME=/home/
+ENV APP_HOME=/home/app/
+RUN mkdir ${APP_HOME}
+RUN mkdir ${APP_HOME}/staticfiles
+WORKDIR ${APP_HOME}
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -12,16 +17,14 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install --upgrade pip && pip install pipenv
 
-WORKDIR /app
 
-COPY Pipfile Pipfile.lock /app/
+COPY Pipfile Pipfile.lock ./
 
 RUN pipenv lock
 
 RUN pip install pipenv && pipenv install --system --deploy
 
-COPY . /app/
+COPY . .
 
 EXPOSE 8000
 
-CMD ["pipenv", "run", "gunicorn", "--bind", "0.0.0.0:8000", "backendAPI.wsgi:application"]
