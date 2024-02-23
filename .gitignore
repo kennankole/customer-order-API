@@ -1,4 +1,5 @@
 .env
+.env.prod.db
 .coveragerc
 .coverage
 db.sqlite3
