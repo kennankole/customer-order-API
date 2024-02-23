@@ -8,10 +8,7 @@ load_dotenv()
 
 
 env = environ.Env()
-env = environ.Env(
-	# set casting, default value
-	DEBUG=(bool, False)
-)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -95,7 +92,7 @@ LOGIN_URL = '/api-auth/login/'
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
   'default': dj_database_url.config(
-    default='postgresql://postgres:postgres@localhost:5432/mysite', 
+    default=os.environ.get('PRODUCTION_DB'), 
     conn_max_age=600    
   )}
 
