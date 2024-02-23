@@ -18,6 +18,10 @@ load_dotenv()
 
 
 env = environ.Env()
+env = environ.Env(
+	# set casting, default value
+	DEBUG=(bool, False)
+)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,9 +34,9 @@ SECRET_KEY = env.str('SECRET_KEY')
 DJANGO_SETTINGS_MODULE = env.str('DJANGO_SETTINGS_MODULE')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,7 +90,6 @@ REST_FRAMEWORK = {
 	'DEFAULT_AUTHENTICATION_CLASSES': [
 		'rest_framework.authentication.TokenAuthentication',
 		'rest_framework.authentication.SessionAuthentication',
-		# 'customerApp.authentication.CustomAuthentication',
 	]
 }
 
@@ -101,12 +104,12 @@ LOGIN_URL = '/api-auth/login/'
 
 DATABASES = {
 	'default': {
-		'ENGINE': 'django.db.backends.postgresql',
-		'NAME': 'services_db',
-		'PASSWORD': '2300',
-		'USER': 'postgres',
-		'HOST': 'localhost',
-		'PORT': '5432',
+		'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
+		'NAME': env.str('NAME'),
+		'PASSWORD': os.environ.get('PASSWORD'),
+		'USER': env.str('USER'),
+		'HOST': os.environ.get('HOST', 'localhost'),
+		'PORT': env.str('PORT'),
 	}
 }
 
