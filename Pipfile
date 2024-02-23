@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+pytest-drf = "*"
+pytest = "*"
+pytest-django = "*"
+psycopg2 = "*"
+pytest-cov = "*"
+django-oidc-provider = "*"
+africastalking = "*"
+django-environ = "*"
+python-dotenv = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
