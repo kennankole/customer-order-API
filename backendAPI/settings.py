@@ -32,7 +32,7 @@ DJANGO_SETTINGS_MODULE = env.str('DJANGO_SETTINGS_MODULE')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 

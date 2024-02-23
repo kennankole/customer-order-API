@@ -1,6 +1,5 @@
 # Customer Backend API
 
-
 ## Built With
 
 - Django 
@@ -15,31 +14,37 @@
 
 To get a local copy up and running follow these simple example steps.
 
-
 ### Setup
 
 ```
 git clone https://github.com/kennankole/customer-order-API.git
 ```
 
+```
+cd customer-order-API
+```
+
 ### Install
 ```
-npm install -y
+ docker
 ```
-```
-npm install webpack webpack-cli webpack-dev-server --save-dev
-```
+
+
 ### Usage
 To run the project on server, run below command
 
 ```
-npm start
+docker-compose up -d --build
 ```
 
 ### Run tests
 
+
 ```
-npm test
+pip install pipenv
+```
+```
+pipenv install
 ```
 
 
