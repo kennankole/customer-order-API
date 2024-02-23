@@ -3,7 +3,7 @@ name: DjangoREST CI/CD
 on:
   push:
     branches:
-      - push
+      - main
 
 jobs:
   build:
