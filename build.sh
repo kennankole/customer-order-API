@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 set -o errexit
 
-pipenv lock
-
-pipenv install --deploy
+pipenv install --ignore-pipfile
 
 python manage.py collectstatic --no-input
 
