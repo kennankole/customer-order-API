@@ -19,13 +19,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 ```
-git clone https://github.com/kennankole/customer-order-API
-```
-
-or
-
-```
-git clone git@github.com:Ridwanullahi-code/royal-meals-website.git
+git clone https://github.com/kennankole/customer-order-API.git
 ```
 
 ### Install

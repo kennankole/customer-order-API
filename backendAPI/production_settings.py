@@ -20,11 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str('SECRET_KEY')
 DJANGO_SETTINGS_MODULE = env.str('DJANGO_SETTINGS_MODULE')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
-# ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
