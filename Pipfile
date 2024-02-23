@@ -18,8 +18,10 @@ python-dotenv = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
 dj-database-url = "*"
+whitenoise = {extras = ["brotli"], version = "*"}
+uvicorn = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
