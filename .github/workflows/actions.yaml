@@ -27,7 +27,4 @@ jobs:
     - name: Run tests with pytest and coverage
       run: |
         pipenv run pytest --cov=./
-
-    - name: Deploy to Render
-      run: |
         
