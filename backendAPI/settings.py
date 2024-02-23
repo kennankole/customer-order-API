@@ -100,11 +100,11 @@ LOGIN_URL = '/api-auth/login/'
 DATABASES = {
 	'default': {
 		'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
-		'NAME': env.str('NAME'),
+		'NAME': os.environ.get('NAME'),
 		'PASSWORD': os.environ.get('PASSWORD'),
-		'USER': env.str('USER'),
+		'USER': os.environ.get('USER'),
 		'HOST': 'localhost',
-		'PORT': env.str('PORT'),
+		'PORT': os.environ.get('PORT'),
 	}
 }
 
