@@ -5,7 +5,7 @@ pip install --upgrade pip && pip install pipenv
 
 pipenv lock
 
-pipenv install --system --deploy
+pipenv install
 
 python manage.py collectstatic --no-input
 
