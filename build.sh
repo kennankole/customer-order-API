@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 set -o errexit
 
-pip install --upgrade pip && pip install pipenv
-
 pipenv lock
 
-pipenv install
+pipenv install --deploy
 
 python manage.py collectstatic --no-input
 
