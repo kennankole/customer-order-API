@@ -16,8 +16,10 @@ africastalking = "*"
 django-environ = "*"
 python-dotenv = "*"
 gunicorn = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.8"
