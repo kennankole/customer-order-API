@@ -44,7 +44,7 @@ docker-compose up -d --build
 - Enter the mobile Number you signed up with
 
 - Submit a New order to the following [endpoint](https://customer-order-api.onrender.com/)
- - You receive an SMS on your Africastalking Sandbos
+ - You receive an SMS on your Africastalking Sandbox
 
 
 
