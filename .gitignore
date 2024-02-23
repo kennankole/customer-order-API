@@ -1,6 +1,6 @@
-.env
-.env.prod.db
-.coveragerc
-.coverage
-db.sqlite3
+.env/*
+.env.prod.db/*
+.coveragerc/*
+.coverage/*
+db.sqlite3/*
 .pytest_cache/*
