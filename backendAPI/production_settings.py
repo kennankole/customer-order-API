@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str('SECRET_KEY')
 DJANGO_SETTINGS_MODULE = env.str('DJANGO_SETTINGS_MODULE')
 
-DEBUG = env('DEBUG')
+DEBUG = os.environ.get('DEBUG')
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -137,8 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 
-# OIDC Provider settings
-
-SITE_URL = 'http://localhost:8000'
 OIDC_SESSION_MANAGEMENT_ENABLE = True
 
