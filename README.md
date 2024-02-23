@@ -1,15 +1,10 @@
-#Customer Backend API
+# Customer Backend API
 
-> The functionalities of the website based on giving a customers a list of available foods and provides a way of showing opinion on food through likes and comments. The website built with the HTML, CSS, JavaScript.
 
 ## Built With
 
-- HTML
-- CSS
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Webpack]((https://github.com/microverseinc/curriculum-javascript/blob/main/todo-list/lessons/webpack_v1_1.md))
-
-- Vs Code
+- Django 
+- Django REST Framework
 
 ## Live Demo (if available)
 
@@ -18,22 +13,13 @@
 
 ## Getting Started
 
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-- Basic Knowledge of HTML & CSS
-- Basic Knowledge of [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) & [ES6](https://github.com/microverseinc/curriculum-javascript/blob/main/todo-list/lessons/lesson_es6-what_is_it_about.md) syntax
-- Basic Knowledge of [Webpack](https://webpack.js.org/guides/getting-started/) setup
-- Basic Knowledge of Git Command (Version Control System)
-- Basic Knowledge of Vs code (IDE)
- 
 
 ### Setup
 
 ```
-git clone https://github.com/Ridwanullahi-code/royal-meals-website.git
+git clone https://github.com/kennankole/customer-order-API
 ```
 
 or
