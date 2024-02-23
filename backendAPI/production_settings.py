@@ -8,10 +8,7 @@ load_dotenv()
 
 
 env = environ.Env()
-env = environ.Env(
-	# set casting, default value
-	DEBUG=(bool, False)
-)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,11 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str('SECRET_KEY')
 DJANGO_SETTINGS_MODULE = env.str('DJANGO_SETTINGS_MODULE')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
-# ALLOWED_HOSTS = ['*']
-
+DEBUG = os.environ.get('DEBUG')
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -95,7 +89,7 @@ LOGIN_URL = '/api-auth/login/'
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
   'default': dj_database_url.config(
-    default='postgresql://postgres:postgres@localhost:5432/mysite', 
+    default=os.environ.get('PRODUCTION_DB'), 
     conn_max_age=600    
   )}
 
@@ -143,8 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 
-# OIDC Provider settings
-
-SITE_URL = 'http://localhost:8000'
 OIDC_SESSION_MANAGEMENT_ENABLE = True
 

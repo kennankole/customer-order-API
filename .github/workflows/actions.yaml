@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -29,5 +28,9 @@ jobs:
         pipenv run pytest --cov=./
 
     - name: Deploy to Render
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: |
-        
+        pipenv install render-cli
+
+        # Execute the deployment script
+        ./build.sh
