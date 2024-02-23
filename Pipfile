@@ -20,6 +20,7 @@ psycopg2-binary = "*"
 dj-database-url = "*"
 whitenoise = {extras = ["brotli"], version = "*"}
 uvicorn = "*"
+typing-extensions = "*"
 
 [dev-packages]
 
