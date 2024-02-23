@@ -1,16 +1,8 @@
 from rest_framework import serializers
-from customerApp.models import Customer, Order
+from django.contrib.auth import get_user_model
+from customerApp.models import Customer, Order    
 
-class CustomerSerializer(serializers.ModelSerializer):
-  orders = serializers.PrimaryKeyRelatedField(many=True, queryset=Order.objects.all())
-  
-  class Meta:
-    model = Customer
-    fields = ['username', 'password', 'customer_code', 'orders']
-          
-    def create(self, validated_data):
-      return Customer.objects.create(**validated_data)
-    
+Customer = get_user_model()
 class OrderSerializer(serializers.ModelSerializer):
   owner = serializers.ReadOnlyField(source='owner.username')
   class Meta:
@@ -19,3 +11,15 @@ class OrderSerializer(serializers.ModelSerializer):
     
   def create(self, validated_data):
     return Order.objects.create(**validated_data)
+  
+
+class CustomerSerializer(serializers.ModelSerializer):
+  orders = OrderSerializer(many=True, read_only=True)
+  
+  class Meta:
+    model = Customer
+    fields = ('username', 'password', 'phone_number', 'customer_code', 'orders')
+    read_only_fields = ('orders', )
+          
+    def create(self, validated_data):
+      return Customer.objects.create_user(**validated_data)
