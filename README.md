@@ -37,6 +37,17 @@ To run the project on server, run below command
 docker-compose up -d --build
 ```
 
+## To Receive Sms Notifiction
+
+- Go To [Africastalking](https://developers.africastalking.com/simulator)
+
+- Enter the mobile Number you signed up with
+
+- Submit a New order to the following [endpoint](https://customer-order-api.onrender.com/)
+ - You receive an SMS on your Africastalking Sandbos
+
+
+
 ### Run tests
 
 ```
